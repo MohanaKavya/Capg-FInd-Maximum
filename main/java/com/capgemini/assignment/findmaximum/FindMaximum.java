@@ -14,7 +14,7 @@ public class FindMaximum {
 	        System.out.println("Maximum number is "+findMaximum(num1 , num2 , num3));
 	}
 
-	private static Integer findMaximum(Integer x, Integer y, Integer z) {
+	static Integer findMaximum(Integer x, Integer y, Integer z) {
 		int max=0;
 		if(x.compareTo(y)>0 && x.compareTo(z)>0) {
 			max=x;
