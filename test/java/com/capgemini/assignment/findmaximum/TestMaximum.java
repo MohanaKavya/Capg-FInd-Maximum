@@ -5,103 +5,80 @@ import org.junit.Test;
 
 public class TestMaximum {
 	
+	FindMaximum userMax1 = new FindMaximum<Integer>();
+	FindMaximum userMax2 = new FindMaximum<Float>();
+	FindMaximum userMax3 = new FindMaximum<String>();
+
 	@Test
 	public void testIntegerMaximumAtFirstPosition() {
-		Integer maximum= new FindMaximum<Integer>(23, 12, 15).printMax();
-		boolean flag;
-		if(maximum.equals(23))
-			flag=true;
-		else
-			flag=false;
-		Assert.assertEquals(true, flag);
+		userMax1.findMaximum(23, 12, 15);
+		Assert.assertEquals(23, userMax1.printMax());
 	}
-	
+
 	@Test
 	public void testIntegerMaximumAtSecondPosition() {
-		Integer maximum= new FindMaximum<Integer>(10, 20, 15).printMax();
-		boolean flag;
-		if(maximum.equals(20))
-			flag=true;
-		else
-			flag=false;
-		Assert.assertEquals(true, flag);
+		userMax1.findMaximum(10, 20, 15);
+		Assert.assertEquals(20, userMax1.printMax());
 	}
-	
+
 	@Test
 	public void testIntegerMaximumAtThirdPosition() {
-		Integer maximum= new FindMaximum<Integer>(23, 12, 40).printMax();
-		boolean flag;
-		if(maximum.equals(40))
-			flag=true;
-		else
-			flag=false;
-		Assert.assertEquals(true, flag);
+		userMax1.findMaximum(23, 12, 40);
+		Assert.assertEquals(40, userMax1.printMax());
 	}
-	
+
+	@Test
+	public void testForMoreThanIntegers() {
+		userMax1.findMaximum(23, 12, 2, 40, 90);
+		Assert.assertEquals(90, userMax1.printMax());
+	}
+
 	@Test
 	public void testFloatMaximumAtFirstPosition() {
-		Float maximum= new FindMaximum<Float>(23.2f, 12.4f, 15.6f).printMax();
-		boolean flag;
-		if(maximum.equals(23.2f))
-			flag=true;
-		else
-			flag=false;
-		Assert.assertEquals(true, flag);
+		userMax2.findMaximum(23.2f, 12.4f, 15.6f);
+		Assert.assertEquals(23.2f, userMax2.printMax());
 	}
-	
+
 	@Test
 	public void testFloatMaximumAtSecondPosition() {
-		Float maximum= new FindMaximum<Float>(12.5f,29.6f,9.8f).printMax();
-		boolean flag;
-		if(maximum.equals(29.6f))
-			flag=true;
-		else
-			flag=false;
-		Assert.assertEquals(true, flag);
+		userMax2.findMaximum(12.5f, 29.6f, 9.8f);
+		Assert.assertEquals(29.6f, userMax2.printMax());
 	}
-	
+
 	@Test
 	public void testFloatMaximumAtThirdPosition() {
-		Float maximum= new FindMaximum<Float>(14.5f,9.2f,15.1f).printMax();
-		boolean flag;
-		if(maximum.equals(15.1f))
-			flag=true;
-		else
-			flag=false;
-		Assert.assertEquals(true, flag);
-	}
-		
-	@Test
-	public void testMaximumAtFirstPosition() {
-		String maximum = new FindMaximum<String>("Peach", "Apple", "Banana").printMax();
-		boolean flag;
-		if (maximum.equals("Peach"))
-			flag = true;
-		else
-			flag = false;
-		Assert.assertEquals(true, flag);
+		userMax2.findMaximum(14.5f, 9.2f, 15.1f);
+		Assert.assertEquals(15.1f, userMax2.printMax());
 	}
 
 	@Test
-	public void testMaximumAtSecondPosition() {
-		String maximum = new FindMaximum<String>("Apple", "Peach", "Banana").printMax();
-		boolean flag;
-		if (maximum.equals("Peach"))
-			flag = true;
-		else
-			flag = false;
-		Assert.assertEquals(true, flag);
+	public void testForMoreThanFloatValues() {
+		userMax2.findMaximum(23.2f, 12.4f, 15.6f, 56.7f, 9.2f);
+		Assert.assertEquals(56.7f, userMax2.printMax());
 	}
 
 	@Test
-	public void testMaximumAtThirdPosition() {
-		String maximum = new FindMaximum<String>("Apple", "Banana", "Peach").printMax();
-		boolean flag;
-		if (maximum.equals("Peach"))
-			flag = true;
-		else
-			flag = false;
-		Assert.assertEquals(true, flag);
+	public void testStringMaximumAtFirstPosition() {
+		userMax3.findMaximum("Pineapple", "Peach", "Banana");
+		Assert.assertEquals("Pineapple", userMax3.printMax());
+	}
+
+	@Test
+	public void testStringMaximumAtSecondPosition() {
+		userMax3.findMaximum("Apple", "Peach", "Banana");
+		Assert.assertEquals("Peach", userMax3.printMax());
+	}
+
+	@Test
+	public void testStringMaximumAtThirdPosition() {
+		userMax3.findMaximum("Apple", "Banana", "Peach");
+		Assert.assertEquals("Peach", userMax3.printMax());
+	}
+
+	@Test
+	public void testForMoreThanStrings() {
+		userMax3.findMaximum("Apple", "Banana", "Peach", "Pomegranate", "Kiwi");
+		Assert.assertEquals("Pomegranate", userMax3.printMax());
 	}
 	
 }
