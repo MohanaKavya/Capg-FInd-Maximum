@@ -15,4 +15,15 @@ public class TestMaximum {
 			flag=false;
 		Assert.assertEquals(true, flag);
 	}
+	
+	@Test
+	public void testMaximumAtSecondPosition() {
+		Integer maximum = FindMaximum.findMaximum(15, 20, 3);
+		boolean flag;
+		if(maximum.equals(20))
+			flag=true;
+		else
+			flag=false;
+		Assert.assertEquals(true, flag);
+	}
 }
