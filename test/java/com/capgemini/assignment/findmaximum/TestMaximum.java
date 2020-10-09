@@ -26,4 +26,15 @@ public class TestMaximum {
 			flag=false;
 		Assert.assertEquals(true, flag);
 	}
+	
+	@Test
+	public void testMaximumAtThirdPosition() {
+		Integer maximum = FindMaximum.findMaximum(25, 20, 35);
+		boolean flag;
+		if(maximum.equals(35))
+			flag=true;
+		else
+			flag=false;
+		Assert.assertEquals(true, flag);
+	}
 }
