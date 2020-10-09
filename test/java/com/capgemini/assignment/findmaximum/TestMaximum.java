@@ -7,7 +7,7 @@ public class TestMaximum {
 	
 	@Test
 	public void testIntegerMaximumAtFirstPosition() {
-		Integer maximum=FindMaximum.findMaximum(23, 12, 15);
+		Integer maximum= new FindMaximum<Integer>(23, 12, 15).printMax();
 		boolean flag;
 		if(maximum.equals(23))
 			flag=true;
@@ -18,7 +18,7 @@ public class TestMaximum {
 	
 	@Test
 	public void testIntegerMaximumAtSecondPosition() {
-		Integer maximum=FindMaximum.findMaximum(10, 20, 15);
+		Integer maximum= new FindMaximum<Integer>(10, 20, 15).printMax();
 		boolean flag;
 		if(maximum.equals(20))
 			flag=true;
@@ -29,7 +29,7 @@ public class TestMaximum {
 	
 	@Test
 	public void testIntegerMaximumAtThirdPosition() {
-		Integer maximum=FindMaximum.findMaximum(23, 12, 40);
+		Integer maximum= new FindMaximum<Integer>(23, 12, 40).printMax();
 		boolean flag;
 		if(maximum.equals(40))
 			flag=true;
@@ -40,7 +40,7 @@ public class TestMaximum {
 	
 	@Test
 	public void testFloatMaximumAtFirstPosition() {
-		Float maximum=FindMaximum.findMaximum(23.2f, 12.4f, 15.6f);
+		Float maximum= new FindMaximum<Float>(23.2f, 12.4f, 15.6f).printMax();
 		boolean flag;
 		if(maximum.equals(23.2f))
 			flag=true;
@@ -51,7 +51,7 @@ public class TestMaximum {
 	
 	@Test
 	public void testFloatMaximumAtSecondPosition() {
-		Float maximum=FindMaximum.findMaximum(12.5f,29.6f,9.8f);
+		Float maximum= new FindMaximum<Float>(12.5f,29.6f,9.8f).printMax();
 		boolean flag;
 		if(maximum.equals(29.6f))
 			flag=true;
@@ -62,7 +62,7 @@ public class TestMaximum {
 	
 	@Test
 	public void testFloatMaximumAtThirdPosition() {
-		Float maximum=FindMaximum.findMaximum(14.5f,9.2f,15.1f);
+		Float maximum= new FindMaximum<Float>(14.5f,9.2f,15.1f).printMax();
 		boolean flag;
 		if(maximum.equals(15.1f))
 			flag=true;
@@ -73,7 +73,7 @@ public class TestMaximum {
 		
 	@Test
 	public void testMaximumAtFirstPosition() {
-		String maximum = FindMaximum.findMaximum("Peach", "Apple", "Banana");
+		String maximum = new FindMaximum<String>("Peach", "Apple", "Banana").printMax();
 		boolean flag;
 		if (maximum.equals("Peach"))
 			flag = true;
@@ -84,7 +84,7 @@ public class TestMaximum {
 
 	@Test
 	public void testMaximumAtSecondPosition() {
-		String maximum = FindMaximum.findMaximum("Apple", "Peach", "Banana");
+		String maximum = new FindMaximum<String>("Apple", "Peach", "Banana").printMax();
 		boolean flag;
 		if (maximum.equals("Peach"))
 			flag = true;
@@ -95,7 +95,7 @@ public class TestMaximum {
 
 	@Test
 	public void testMaximumAtThirdPosition() {
-		String maximum = FindMaximum.findMaximum("Apple", "Banana", "Peach");
+		String maximum = new FindMaximum<String>("Apple", "Banana", "Peach").printMax();
 		boolean flag;
 		if (maximum.equals("Peach"))
 			flag = true;
